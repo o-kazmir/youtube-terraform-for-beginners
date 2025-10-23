@@ -21,15 +21,10 @@ provider "google" {
 }
 
 resource "aws_s3_bucket" "demo_bucket" {
-  bucket = "tf-demo-bucket-${random_id.random_name.hex}"
+  bucket = "tf-demo-bucket-terraform-youtube"
 }
 
 resource "google_storage_bucket" "demo_bucket" {
-  name     = "tf-demo-gcs-${random_id.random_name.hex}"
+  name     = "tf-demo-gcs-terraform-youtube"
   location = "us-east1"
-}
-
-// Utils
-resource "random_id" "random_name" {
-  byte_length = 8
 }
